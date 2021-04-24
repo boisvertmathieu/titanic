@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>{{ title }}</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- Iterating through the first passenger's key to build the table header -->
+        <th *ngFor="let field of fields" scope="col">
+          {{ field }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let passenger of passengers">
+        <td *ngFor="let item of passenger | keyvalue: preserveOrder">
+          {{ item.value }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
